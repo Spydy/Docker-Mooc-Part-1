@@ -1,0 +1,16 @@
+sudo docker run -p 3000:3000 rails-example-project
+
+Edited following files to add secret_key_base so the production version works:
+
+	modified:   config/environments/production.rb 
+	modified:   config/secrets.yml
+
+	production.rb
+
+	config.secret_key_base = 'production_test_key'
+
+
+	secrets.yml
+	
+	production:
+ 		secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>

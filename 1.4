@@ -1,0 +1,19 @@
+spydy@dolos:~/Downloads$ sudo docker run devopsdockeruh/exec_bash_exercise
+
+--Toisessa terminaalissa--
+spydy@dolos:~/Downloads$ sudo docker ps
+[sudo] password for spydy: 
+CONTAINER ID        IMAGE                               COMMAND             CREATED             STATUS              PORTS               NAMES
+b26ebebfb289        devopsdockeruh/exec_bash_exercise   "node index"        14 minutes ago      Up 14 minutes                           peaceful_lehmann
+spydy@dolos:~/Downloads$ sudo docker exec -it b26 bash
+root@b26ebebfb289:/usr/app# ls
+Dockerfile  README.md  index.js  logs.txt
+root@b26ebebfb289:/usr/app# tail -f ./logs.txt 
+Secret message is:
+"Docker is easy"
+Fri, 23 Aug 2019 20:15:47 GMT
+Fri, 23 Aug 2019 20:15:50 GMT
+Fri, 23 Aug 2019 20:15:53 GMT
+Fri, 23 Aug 2019 20:15:56 GMT
+Secret message is:
+"Docker is easy"

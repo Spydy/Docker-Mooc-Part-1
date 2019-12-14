@@ -1,0 +1,17 @@
+spydy@dolos:~/Downloads$ sudo docker run -it --name websitereader ubuntu:16.04 bash
+root@cfc911d41f3d:/# apt-get update
+root@cfc911d41f3d:/# apt-get install curl
+root@cfc911d41f3d:/# exit
+spydy@dolos:~/Downloads$ sudo docker start websitereader
+websitereader
+spydy@dolos:~/Downloads$ sudo docker exec -it websitereader sh -c 'echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website;'
+Input website:
+helsinki.fi
+Searching..
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>301 Moved Permanently</title>
+</head><body>
+<h1>Moved Permanently</h1>
+<p>The document has moved <a href="http://www.helsinki.fi/">here</a>.</p>
+</body></html>
